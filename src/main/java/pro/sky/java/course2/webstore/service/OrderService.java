@@ -15,8 +15,12 @@ public class OrderService {
     public void addProductsId(String productsId) {
         String[] arrayProductsId = productsId.split(",");
         for (String stringNumberId : arrayProductsId) {
-            Integer numberId = Integer.valueOf(stringNumberId);
-            order.addProductsId(numberId);
+            try {
+                Integer numberId = Integer.valueOf(stringNumberId);
+                order.addProductsId(numberId);
+            }catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Неправильный формат строки");
+            }
         }
     }
 

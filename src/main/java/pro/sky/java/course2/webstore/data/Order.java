@@ -11,7 +11,7 @@ import java.util.List;
 public class Order {
     private List<Integer> productsId;
 
-    public Order(List<Integer> productsId) {
+    public Order() {
         this.productsId = new ArrayList<>();
     }
 
